@@ -19,16 +19,23 @@
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         };
-var verbs = ['creates', 'promotes', 'lives', 'harnesses', 'enjoys', 'feels', 'is', 'gives'];
-var adjs = ['aware', 'healthy', 'strong', 'deep', 'joyfoul', 'human'];
-var names = ['strength', 'wisdom', 'power', 'conciousness', 'dream', 'vision', 'range'];
-var famous = ["St Paul","Adolf Hitler ","George Washington" ,"Sri Krishna ","Emperor Constantine" ,"Martin Luther ","Socrates ","Mahatma Gandhi ","Karl Marx ","Napoleon Bonaparte","Simon Bolivar ","Franklin D. Roosevelt","Charles Darwin ","Sir Isaac Newton","Confucius ","Akbar ","Queen Victoria ","Konrad Adenauer ","Jawaharlal Nehru" ,"Ramses II ","Benjamin Franklin" ,"Alexander the Great" ,"Woodrow Wilson ","Christopher Columbus" ,"Marcus Aurelius ","Galileo Galilei ","Plato ","Joan of Arc ","Charlemagne ","Aristotle ","Saladin ","Babur ","Sir Walter Raleigh" ,"Voltaire","Catherine the Great","Mozart","Guru Nanak ","Leonardo da Vinci" ,"Louis Pasteur ","Leo Tolstoy ","Albert Einstein ","Ataturk ","Pablo Picasso ","Pope John Paul I","Margaret Thatcher" ,"Mohammed Ali","John F. Kennedy","Boris Yeltsin ","Indira Gandhi ","William Tyndale","Tim Berners Lee","Rosa Parks","Benazir Bhutto ","J.S. Bach ","14th Dalai Lama","Malcolm X ","Lech Walesa ","Charles de Gaulle" ,"Joseph Stalin ","Marie Curie","Giuseppe Garibaldi","Johann Gutenberg" ,"Oliver Cromwell","V.Lenin ","Sigmund Freud","Mother Teresa ","Bill Gates","Ernest Hemingway" ,"John Lennon ","Genghis Kahn ","Haile Selassie ","John M Keynes ","Susan B. Anthony" ,"George Orwell ","Thomas Edison ","Kofi Annan ","Dwight Eisenhower","Eleanor Roosevelt ","Dr. B.R. Ambedkar ","Lyndon Johnson ","William Wilberforce" ,"Nikola Tesla ","Alexander Fleming" ,"Samuel Johnson ","Eva Peron ","Henry Ford","Princess Diana ","Oscar Wilde ","Beethoven ","Aung San Suu Kyi"];
+        var verbs = ['creates', 'promotes', 'lives', 'harnesses', 'enjoys', 'feels', 'is', 'gives', 'believes'];
+        var adjs = ['aware', 'healthy', 'strong', 'deep', 'joyfoul', 'human', 'great'];
+        var names = ['strength', 'wisdom', 'power', 'conciousness', 'dream', 'vision', 'light', 'success', 'belief'];
+        var conj = ['but', 'still', 'however', 'thus', 'and', 'therefore', 'before'];
+        var famous = ["St Paul","Adolf Hitler ","George Washington" ,"Sri Krishna ","Emperor Constantine" ,"Martin Luther ","Socrates ","Mahatma Gandhi ","Karl Marx ","Napoleon Bonaparte","Simon Bolivar ","Franklin D. Roosevelt","Charles Darwin ","Sir Isaac Newton","Confucius ","Akbar ","Queen Victoria ","Konrad Adenauer ","Jawaharlal Nehru" ,"Ramses II ","Benjamin Franklin" ,"Alexander the Great" ,"Woodrow Wilson ","Christopher Columbus" ,"Marcus Aurelius ","Galileo Galilei ","Plato ","Joan of Arc ","Charlemagne ","Aristotle ","Saladin ","Babur ","Sir Walter Raleigh" ,"Voltaire","Catherine the Great","Mozart","Guru Nanak ","Leonardo da Vinci" ,"Louis Pasteur ","Leo Tolstoy ","Albert Einstein ","Ataturk ","Pablo Picasso ","Pope John Paul I","Margaret Thatcher" ,"Mohammed Ali","John F. Kennedy","Boris Yeltsin ","Indira Gandhi ","William Tyndale","Tim Berners Lee","Rosa Parks","Benazir Bhutto ","J.S. Bach ","14th Dalai Lama","Malcolm X ","Lech Walesa ","Charles de Gaulle" ,"Joseph Stalin ","Marie Curie","Giuseppe Garibaldi","Johann Gutenberg" ,"Oliver Cromwell","V.Lenin ","Sigmund Freud","Mother Teresa ","Bill Gates","Ernest Hemingway" ,"John Lennon ","Genghis Kahn ","Haile Selassie ","John M Keynes ","Susan B. Anthony" ,"George Orwell ","Thomas Edison ","Kofi Annan ","Dwight Eisenhower","Eleanor Roosevelt ","Dr. B.R. Ambedkar ","Lyndon Johnson ","William Wilberforce" ,"Nikola Tesla ","Alexander Fleming" ,"Samuel Johnson ","Eva Peron ","Henry Ford","Princess Diana ","Oscar Wilde ","Beethoven ","Aung San Suu Kyi"];
         function rd(n) {
             return (n[Math.floor(Math.random() * n.length)]);
         }
+        function shortQuote() {
+            return (rd(adjs)+ ' ' + rd(names) + ' ' + rd(verbs) + ' ' + rd(names));
+        }
+        function longQuote() {
+            return (shortQuote() + ' ' + rd(conj) + ' ' + shortQuote());
+        }
         function genQuote() {
-            $(".quote").text('”	 ' + capitalizeFirstLetter(rd(adjs))+ ' ' + rd(names) + ' ' + rd(verbs) + ' ' + rd(names) + ' ”');
-            $(".author").text('- ' + rd(famous) + ' ' + Math.floor(Math.random() * 2000));
+            $(".quote").text('”	 ' + capitalizeFirstLetter(longQuote()) + ' ”');
+            $(".author").text('- ' + rd(famous));
         }
         $(document).ready(function() {
             genQuote();
