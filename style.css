@@ -1,0 +1,25 @@
+.quote {
+    margin-top: 50px;
+    margin: 20px;
+    font-style: italic;
+    font-size: 25px;
+}
+
+body {
+    background-color: #9999CC;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+	width: 840px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: 'Inconsolata';
+    padding: 20px;
+}
+.author {
+    text-align: right;
+    margin: 20px;
+}
