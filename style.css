@@ -11,11 +11,9 @@ body {
 
 .container {
     text-align: center;
-    background-color: #F8F8F8;
 	width: 840px;
     border-radius: 10px;
     margin: 20px auto;
-    box-shadow: 5px 5px 5px #888888;
     padding: 20px;
 }
 .author {
@@ -33,6 +31,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #F8F8F8;
     margin: 10px;
+    box-shadow: 0px 0px 20px #888888;
 }
 
 .filter {
@@ -41,5 +40,10 @@ body {
 }
 
 footer {
-    text-align: right;
+    font-style: italic;
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
 }
+
+
