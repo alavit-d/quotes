@@ -1,16 +1,17 @@
 .quote {
+    padding: 50px;
     padding-top: 220px;
     margin: 20px;
-    font-size: 25px;
+    font-size: 32px;
 }
 
 body {
-    background-color: #9999CC;
+    background-color: #FFF8F0;
 }
 
 .container {
     text-align: center;
-    background-color: white;
+    background-color: #F8F8F8;
 	width: 840px;
     border-radius: 10px;
     margin: 20px auto;
@@ -20,6 +21,7 @@ body {
 .author {
     text-align: right;
     margin: 20px;
+    font-size: 20px;
 }
 
 .quote-cont {
@@ -36,4 +38,8 @@ body {
 .filter {
     height: 100%;
     background: rgba(0,0,0,0.2);
+}
+
+footer {
+    text-align: right;
 }
