@@ -1,7 +1,6 @@
 .quote {
-    margin-top: 50px;
+    padding-top: 220px;
     margin: 20px;
-    font-style: italic;
     font-size: 25px;
 }
 
@@ -16,10 +15,25 @@ body {
     border-radius: 10px;
     margin: 20px auto;
     box-shadow: 5px 5px 5px #888888;
-    font-family: 'Inconsolata';
     padding: 20px;
 }
 .author {
     text-align: right;
     margin: 20px;
+}
+
+.quote-cont {
+    height: 600px;
+    width: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #F8F8F8;
+    margin: 10px;
+}
+
+.filter {
+    height: 100%;
+    background: rgba(0,0,0,0.2);
 }

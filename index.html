@@ -3,49 +3,96 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js"></script>
+    <script src="zeroclipboard/dist/ZeroClipboard.js"></script>
 </head>
 <body>
     <div class="container-fluid container">
         <h1>Inspirationnal Quote Generator</h1>
-        <div class="quote"></div>
-        <div class="author"></div>
+        <div class="quote-cont">
+            <div class="filter">
+                <div class="quote"></div>
+                <div class="author"></div>
+            </div>
+        </div>
         <button class="btn btn-default" onclick="genQuote()">enligthen me!</button>
+        <button class="btn btn-default" id="copy-button" data-clipboard-text="" title="Click to copy me.">save url</button>
     </div>
 </body>
     <script>
         Math.seedrandom();
-        function capitalizeFirstLetter(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        };
-        var verbs = ['creates', 'promotes', 'lives', 'harnesses', 'enjoys', 'feels', 'is', 'gives', 'believes'];
-        var adjs = ['aware', 'healthy', 'strong', 'deep', 'joyfoul', 'human', 'great'];
-        var names = ['strength', 'wisdom', 'power', 'conciousness', 'dream', 'vision', 'light', 'success', 'belief'];
-        var conj = ['but', 'still', 'however', 'thus', 'and', 'therefore', 'before'];
-        var obj = ['little bear', 'small fish', 'quiet elder', 'high sun', 'heavy rain', 'deep puddle', 'calm lake'];
-        var famous = ["St Paul","Adolf Hitler ","George Washington" ,"Sri Krishna ","Emperor Constantine" ,"Martin Luther ","Socrates ","Mahatma Gandhi ","Karl Marx ","Napoleon Bonaparte","Simon Bolivar ","Franklin D. Roosevelt","Charles Darwin ","Sir Isaac Newton","Confucius ","Akbar ","Queen Victoria ","Konrad Adenauer ","Jawaharlal Nehru" ,"Ramses II ","Benjamin Franklin" ,"Alexander the Great" ,"Woodrow Wilson ","Christopher Columbus" ,"Marcus Aurelius ","Galileo Galilei ","Plato ","Joan of Arc ","Charlemagne ","Aristotle ","Saladin ","Babur ","Sir Walter Raleigh" ,"Voltaire","Catherine the Great","Mozart","Guru Nanak ","Leonardo da Vinci" ,"Louis Pasteur ","Leo Tolstoy ","Albert Einstein ","Ataturk ","Pablo Picasso ","Pope John Paul I","Margaret Thatcher" ,"Mohammed Ali","John F. Kennedy","Boris Yeltsin ","Indira Gandhi ","William Tyndale","Tim Berners Lee","Rosa Parks","Benazir Bhutto ","J.S. Bach ","14th Dalai Lama","Malcolm X ","Lech Walesa ","Charles de Gaulle" ,"Joseph Stalin ","Marie Curie","Giuseppe Garibaldi","Johann Gutenberg" ,"Oliver Cromwell","V.Lenin ","Sigmund Freud","Mother Teresa ","Bill Gates","Ernest Hemingway" ,"John Lennon ","Genghis Kahn ","Haile Selassie ","John M Keynes ","Susan B. Anthony" ,"George Orwell ","Thomas Edison ","Kofi Annan ","Dwight Eisenhower","Eleanor Roosevelt ","Dr. B.R. Ambedkar ","Lyndon Johnson ","William Wilberforce" ,"Nikola Tesla ","Alexander Fleming" ,"Samuel Johnson ","Eva Peron ","Henry Ford","Princess Diana ","Oscar Wilde ","Beethoven ","Aung San Suu Kyi"];
+        function capitalize(str) {
+            //var index = -1;
+            str = str.charAt(0).toUpperCase() + str.slice(1);
+            str = str.replace(/\. [a-z]/g, function myFun(x) { return x.toUpperCase();});
+            return str;
+        }
+        var verbs = ['creates', 'promotes', 'lives', 'harnesses', 'enjoys', 'feels', 'is', 'gives', 'believes', 'changes', 'dreams', 'lifts', 'makes'];
+        var adjs = ['aware', 'healthy', 'strong', 'deep', 'human', 'great', 'small', 'little', 'quiet', 'high', 'heavy', 'deep', 'calm'];
+        var conj = [', but', ', then', ', and', ', no', '.'];
+        var famous = ["Adolf Hitler ","George Washington" ,"Emperor Constantine" ,"Martin Luther ","Socrates ","Mahatma Gandhi ","Karl Marx ","Napoleon Bonaparte","Simon Bolivar ","Franklin D. Roosevelt","Charles Darwin ","Sir Isaac Newton","Confucius ","Queen Victoria ","Konrad Adenauer ","Ramses II ","Benjamin Franklin" ,"Alexander the Great","Christopher Columbus" ,"Marcus Aurelius ","Galileo Galilei ","Plato ","Joan of Arc ","Charlemagne ","Aristotle ","Saladin ","Voltaire","Charles Baudelaire","Arthut Rimbaud","Catherine the Great","Mozart","Leonardo da Vinci" ,"Louis Pasteur ","Leo Tolstoy ","Albert Einstein ","Ataturk ","Pablo Picasso ","Benedicto XVI","Margaret Thatcher" ,"Mohammed Ali","John F. Kennedy","Vladimir Putin","Simone de Beauvoir","Marc Zuckerberg","Rosa Parks","Benazir Bhutto ","J.S. Bach ","14th Dalai Lama","Malcolm X ","Lech Walesa ","Charles de Gaulle" ,"Joseph Stalin ","Marie Curie","Giuseppe Garibaldi","Johann Gutenberg" ,"Oliver Cromwell","Vladimir Ilitch Lenin ","Sigmund Freud","Mother Teresa ","Bill Gates","Ernest Hemingway" ,"John Lennon ","Genghis Kahn ","John M Keynes ","Susan B. Anthony" ,"George Orwell ","Thomas Edison ","Dwight Eisenhower","Eleanor Roosevelt ","Dr. B.R. Ambedkar","Nikola Tesla ","Alexander Fleming" ,"Samuel Johnson ","Eva Peron ","Marilyn Monroe", "Henry Ford","Princess Diana ","Oscar Wilde ","Beethoven ","Aung San Suu Kyi", 'Steve Jobs', 'Nicki Minaj', 'Mao Zedong', "Dumbledore", "Gandalf", "Joseph Goebbels", "Erwin Rommel", "Sun Tzu", "Laozi", "Darth Vader"];
+        var mind = ['wisdom', 'consciousness', 'vision', 'dream', 'belief', 'fear'];
+        var self = ['power', 'strength', 'success', 'challenge', 'life', 'test', 'failure', 'money'];
+        var vast = ['time', 'day', 'ocean', 'world', 'shore'];
+        var human = ['child', 'elder', 'voice', 'artist', 'day', 'hand', 'father', 'mother'];
+        var pics = ['amazing-736881_1280.jpg', 'bricks-459299_1280.jpg',  'groynes-339252_1280.jpg', 'langhe-390108_1280.jpg',  'run.jpg',                 'sunset-142607_1280.jpg',  'sunset-675847_1280.jpg']
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
         function rd(n) {
             return (n[Math.floor(Math.random() * n.length)]);
         }
+        var words = [mind, self, vast, human];
+        function genTone() {
+            var tone = Math.floor(Math.random() * words.length);
+            return (rd(words[tone]) + ' ' + rd(verbs) + ' ' + rd(words[tone]));
+        }
+        function genWord() {
+            return rd(rd(words));
+        }
         function shortQuote() {
-            return (rd(adjs)+ ' ' + rd(names) + ' ' + rd(verbs) + ' ' + rd(names));
+            return (rd(adjs)+ ' ' + genWord() + ' ' + rd(verbs) + ' ' + genWord());
         }
         function longQuote() {
-            return (shortQuote() + ' ' + rd(conj) + ' ' + rd(names) + ' ' + rd(verbs));
+            return (rd(adjs) + ' ' + genTone() + rd(conj) + ' ' + genTone());
         }
-        function objQuote() {
-            return (rd(obj) + ' ' + rd(verbs) + ' ' + rd(adjs) + ' ' + rd(names));
-        }
-        var gen = [shortQuote, longQuote, objQuote];
+        var gen = [shortQuote, longQuote];
         function genQuote() {
-            $(".quote").text('”	 ' + capitalizeFirstLetter(rd(gen)()) + ' ”');
+            $(".quote-cont").css('background-image', 'url("pics/' + rd(pics) + '")');
+            $(".quote").text('”	 ' + capitalize(rd(gen)()) + ' ”');
             $(".author").text('- ' + rd(famous));
+            $("#copy-button").attr('data-clipboard-text', window.location.href + '?quote=' + encodeURIComponent($(".quote").text()) + '&author='  + encodeURIComponent($(".author").text()) + '&img=' + encodeURIComponent($(".quote-cont").css('background-image')));
         }
         $(document).ready(function() {
-            genQuote();
+            var client = new ZeroClipboard( document.getElementById("copy-button") );
+            client.on( "ready", function( readyEvent ) {
+            // alert( "ZeroClipboard SWF is ready!" );
+                client.on( "aftercopy", function( event ) {
+                // `this` === `client`
+                // `event.target` === the element that was clicked
+                //event.target.style.display = "none";
+                } )
+            } );
+            var quote = getParameterByName('quote');
+            var author = getParameterByName('author');
+            var img = getParameterByName('img');
+            console.log(quote, author, img);
+            if (quote && author && img) {
+                $(".quote-cont").css('background-image', img);
+                $(".quote").text(quote);
+                $(".author").text(author)
+            }
+            else
+                genQuote();
         });
 </script>
+    <script>
+
+    </script>
 </html>
