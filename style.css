@@ -1,7 +1,9 @@
 .quote {
-    padding: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
     padding-top: 220px;
     margin: 20px;
+    margin-bottom: 0px;
     font-size: 32px;
 }
 
