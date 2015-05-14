@@ -87,7 +87,7 @@
             $(".quote-cont").css('background-image', 'url("pics/' + rd(pics) + '")');
             $(".quote").text(capitalize(rd(gen)() + '.'));
             $(".author").text(rd(famous));
-            $("#copy-button").attr('data-clipboard-text', window.location.pathname  + '?quote=' + encodeURIComponent($(".quote").text()) + '&author='  + encodeURIComponent($(".author").text()) + '&img=' + encodeURIComponent($(".quote-cont").css('background-image')));
+            $("#copy-button").attr('data-clipboard-text', window.location.hostname  + '/quotes/?quote=' + encodeURIComponent($(".quote").text()) + '&author='  + encodeURIComponent($(".author").text()) + '&img=' + encodeURIComponent($(".quote-cont").css('background-image')));
         }
         $(document).ready(function() {
             var client = new ZeroClipboard( document.getElementById("copy-button") );
