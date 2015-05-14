@@ -8,16 +8,6 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js"></script>
     <script src="zeroclipboard/dist/ZeroClipboard.js"></script>
-    <script>var quote = getParameterByName('quote');
-            var author = getParameterByName('author');
-            var img = getParameterByName('img');
-            if (quote && author && img) {
-                $(".quote-cont").css('background-image', img);
-                $(".quote").text(quote);
-                $(".author").text(author)
-            }
-            else
-                genQuote();</script>
 </head>
 <body>
     <div class="container-fluid container">
@@ -109,7 +99,16 @@
                 //event.target.style.display = "none";
                 } )
             } );
-            
+            var quote = getParameterByName('quote');
+            var author = getParameterByName('author');
+            var img = getParameterByName('img');
+            if (quote && author && img) {
+                $(".quote-cont").css('background-image', img);
+                $(".quote").text(quote);
+                $(".author").text(author)
+            }
+            else
+                genQuote();
         });
 </script>
 </html>
