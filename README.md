@@ -1,6 +1,6 @@
 # Quotes
 
-[alavit-d.github.io/quotes](http://alavit-d.github.io)
+[alavit-d.github.io/quotes](http://alavit-d.github.io/quotes)
 
 ##Fake Quote Generator
 
