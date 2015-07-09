@@ -1,0 +1,17 @@
+//var verbs = ['creates', 'promotes', 'lives', 'harnesses', 'enjoys', 'feels', 'is', 'gives', 'believes', 'changes', 'dreams', 'lifts', 'makes'];
+        var adjs = ['aware', 'healthy', 'strong', 'deep', 'human', 'great', 'small', 'little', 'quiet', 'high', 'heavy', 'deep', 'calm'];
+        var conj = [', but', ', then', ', and', ', no', '.', ', because'];
+        var famous = ["Adolf Hitler ","George Washington" ,"Emperor Constantine" ,"Martin Luther ","Socrates ","Mahatma Gandhi ","Karl Marx ","Napoleon Bonaparte","Simon Bolivar ","Franklin D. Roosevelt","Charles Darwin ","Sir Isaac Newton","Confucius ","Queen Victoria ","Konrad Adenauer ","Ramses II ","Benjamin Franklin" ,"Alexander the Great","Christopher Columbus" ,"Marcus Aurelius ","Galileo Galilei ","Plato ","Joan of Arc ","Charlemagne ","Aristotle ","Saladin ","Voltaire","Charles Baudelaire","Arthut Rimbaud","Catherine the Great","Mozart","Leonardo da Vinci" ,"Louis Pasteur ","Leo Tolstoy ","Albert Einstein ","Ataturk ","Pablo Picasso ","Benedicto XVI","Margaret Thatcher" ,"Mohammed Ali","John F. Kennedy","Vladimir Putin","Simone de Beauvoir","Marc Zuckerberg","Rosa Parks","Benazir Bhutto ","J.S. Bach ","14th Dalai Lama","Malcolm X ","Lech Walesa ","Charles de Gaulle" ,"Joseph Stalin ","Marie Curie","Giuseppe Garibaldi","Johann Gutenberg" ,"Oliver Cromwell","Vladimir Ilitch Lenin ","Sigmund Freud","Mother Teresa ","Bill Gates","Ernest Hemingway" ,"John Lennon ","Genghis Kahn ","John M Keynes ","Susan B. Anthony" ,"George Orwell ","Thomas Edison ","Dwight Eisenhower","Eleanor Roosevelt ","Dr. B.R. Ambedkar","Nikola Tesla ","Alexander Fleming" ,"Samuel Johnson ","Eva Peron ","Marilyn Monroe", "Henry Ford","Princess Diana ","Oscar Wilde ","Beethoven ","Aung San Suu Kyi", 'Steve Jobs', 'Nicki Minaj', 'Mao Zedong', "Dumbledore", "Gandalf", "Joseph Goebbels", "Erwin Rommel", "Sun Tzu", "Laozi", "Darth Vader", 'Tupac'];
+        var subj3 = ['life', 'success', 'the mind', 'impact', 'wisdom'];
+        var subj1 = ['I'];
+        var subj2 = ['you', 'we', 'people'];
+        var subject = [subj1, subj2, subj3];
+        var verbs1 = ['miss the', 'am about making', 'am about', 'am living the', 'am the', 'become the', 'am not the', 'would want'];
+        var verbs2 = ['miss the', 'are about making', 'are about', 'are living the', 'are the', 'become the', 'are not the', 'would want'];
+        var verbs3 = ['misses the', 'is about making', 'is about', 'is living the', 'is the', 'becomes the', 'is not the', 'would want'];
+        var after = ['of man', 'of nature', 'less traveled by', 'like a tree', 'in life', 'within you', 'with humanity'];
+        var cplt = ['success', 'boredom', 'passion', 'risks', 'success', 'revenge', 'wisdom', 'consciousness', 'vision', 'dream', 'belief', 'money', 'time', 'challenge', 'time', 'day', 'voice'];
+        var mind = ['wisdom', 'consciousness', 'vision', 'dream', 'belief', 'fear'];
+        var self = ['power', 'strength', 'success', 'challenge', 'life', 'failure', 'money'];
+        var vast = ['time', 'day', 'ocean', 'world', 'shore'];
+        var human = ['child', 'elder', 'voice', 'artist', 'day', 'hand', 'father', 'mother'];
