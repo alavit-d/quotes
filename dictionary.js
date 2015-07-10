@@ -17,9 +17,9 @@ var self = ['power', 'strength', 'success', 'challenge', 'life', 'failure', 'mon
 var vast = ['time', 'day', 'ocean', 'world', 'shore'];
 var human = ['child', 'elder', 'voice', 'artist', 'day', 'hand', 'father', 'mother'];
 //@@ == Singular, !@@ == inverse of singular, ## == verb, && == plural
-var sing = ['depressed robot', 'message of god to his creation','mass murder', 'human sacrifice', 'satanism', 'blood bath','dictatorship', 'masturbation with an hamster', 'sovietism', 'vibrator', 'illuminati', 'your mom'];
-var oppSing = ['happy dolphin', 'tax inspector','baby-boom', 'new virgin', 'mormonism', 'champagne shower', 'veganism', 'meditation', 'capitalism', 'towel', 'reptil', 'dildo in a box'];
-var verb = ['blaze', 'masturbate', 'sniff', 'screw', 'inject', 'act like Zaphod Beeblebrox', 'hitch-hike', 'fart in your space suit'];
+var sing = ['mass murder', 'human sacrifice', 'satanism', 'blood bath','dictatorship', 'masturbation with an hamster', 'sovietism', 'vibrator', 'illuminati', 'your mom'];
+var oppSing = ['tax inspector','baby-boom', 'new virgin', 'mormonism', 'champagne shower', 'veganism', 'meditation', 'capitalism', 'towel', 'reptil', 'dildo in a box'];
+var verb = ['blaze', 'masturbate', 'sniff', 'screw', 'inject', 'fart in your space suit'];
 var phrases =
 ['You miss 100% of the @@ you don’t take'
 ,'@@ is about making an impact'
