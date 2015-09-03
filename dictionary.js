@@ -12,10 +12,8 @@ var verbs2 = ['miss the', 'are about making', 'are about', 'are living the', 'ar
 var verbs3 = ['misses the', 'is about making', 'is about', 'is living the', 'is the', 'becomes the', 'is not the', 'would want'];
 var after = ['of man', 'of nature', 'less traveled by', 'like a tree', 'in life', 'within you', 'with humanity'];
 var cplt = ['success', 'boredom', 'passion', 'risks', 'success', 'revenge', 'wisdom', 'consciousness', 'vision', 'dream', 'belief', 'money', 'time', 'challenge', 'time', 'day', 'voice'];
-var mind = ['wisdom', 'consciousness', 'vision', 'dream', 'belief', 'fear'];
-var self = ['power', 'strength', 'success', 'challenge', 'life', 'failure', 'money'];
-var vast = ['time', 'day', 'ocean', 'world', 'shore'];
-var human = ['child', 'elder', 'voice', 'artist', 'day', 'hand', 'father', 'mother'];
+var great = ['wisdom', 'consciousness', 'vision', 'dream', 'belief', 'fear', 'the wise one', 'the elder', 'the philosopher', 'enlightment', 'karma'];
+var political = ['marxsim', 'trostkysm', 'singularism', 'nazism', 'fascism', 'liberalism', 'imperialism'];
 //@@ == Singular, !@@ == inverse of singular, ## == verb, && == plural
 var sing = ['mass murder', 'human sacrifice', 'satanism', 'blood bath','dictatorship', 'masturbation with an hamster', 'sovietism', 'vibrator', 'illuminati', 'your mom'];
 var oppSing = ['tax inspector','baby-boom', 'new virgin', 'mormonism', 'champagne shower', 'veganism', 'meditation', 'capitalism', 'towel', 'reptil', 'dildo in a box'];
